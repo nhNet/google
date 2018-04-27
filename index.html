@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
-<head></head>
+<head>
+        <meta name="google-signin-client_id" content="85767282851-i0j022v2bj9h6j793a8h8v5tojpot62n.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>  
+</head>
 <body>
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <script>
@@ -11,8 +14,6 @@
           console.log('Image URL: ' + profile.getImageUrl());
           console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
-        <meta name="google-signin-client_id" content="85767282851-i0j022v2bj9h6j793a8h8v5tojpot62n.apps.googleusercontent.com">
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
 </script>
 <!-- Default Statcounter code for NH Google
 https://nhNet.github.io/google -->
@@ -26,7 +27,7 @@ document.write("<sc"+"ript type='text/javascript' src='" +
 scJsHost+
 "statcounter.com/counter/counter.js'></"+"script>");
 </script>
-<noscript><div class="statcounter"><a title="Web Analytics"
+<noscript><div style="display:none;" class="statcounter"><a title="Web Analytics"
 href="http://statcounter.com/" target="_blank"><img
 class="statcounter"
 src="//c.statcounter.com/11696232/0/e68fe817/0/" alt="Web
