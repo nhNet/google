@@ -5,22 +5,23 @@
         <script src="https://apis.google.com/js/platform.js" async defer></script>  
 </head>
 <body>
+  <div class="welcome"></div>
   <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <button onclick="signOut();">Sign out</button>
 <script>
         function onSignIn(googleUser) {
           var profile = googleUser.getBasicProfile();
           var profileImg = profile.getImageUrl();
           var profileName = profile.getName();
-          document.body.innerHTML="<h1 style='font-size:60px;'> Welcome, <img width='60px' height='60px' src='"+profileImg+"'>"+profileName+"!";
+          document.querySelector('.welcome').innerHTML="<h1 style='font-size:60px;'> Welcome, <img width='60px' height='60px' src='"+profileImg+"'>"+profileName+"!";
           console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
 </script>
-   <a href="#" onclick="signOut();">Sign out</a>
 <script>
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      document.body.innerHTML="<h1>You signed out!</h1><p>Sign In again to continue using NH Net Browser!</p><div class='g-signin2' data-onsuccess='onSignIn'></div>";
+      document.querySelector('.welcome').innerHTML="<h1>You signed out!</h1><p>Sign In again to continue using NH Net Browser!</p><div class='g-signin2' data-onsuccess='onSignIn'></div>";
     });
   }
 </script>
