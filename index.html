@@ -6,8 +6,11 @@
 </head>
 <body style="text-align:center;">
   <div class="welcome"></div>
-  <div class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onFail"></div>
 <script>
+        function onFail(){
+                document.querySelector('.welcome').innerHTML="<h1 style='font-size:60px;'> You haven't signed in yet! <h1>";
+        }
         function onSignIn(googleUser) {
           var profile = googleUser.getBasicProfile();
           var profileImg = profile.getImageUrl();
