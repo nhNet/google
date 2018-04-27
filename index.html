@@ -9,9 +9,8 @@
 <script>
         function onSignIn(googleUser) {
           var profile = googleUser.getBasicProfile();
-          console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-          console.log('Name: ' + profile.getName());
-          console.log('Image URL: ' + profile.getImageUrl());
+          document.body.innerHTML="<h1 style='font-size:60px;'> Welcome, <img width='60px' height='60px' src='"+profile.getImageUrl()"'>"+profile.getName()+"!";
+          console.log('Image URL: ' + );
           console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
 </script>
