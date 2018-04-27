@@ -4,15 +4,15 @@
         <meta name="google-signin-client_id" content="85767282851-i0j022v2bj9h6j793a8h8v5tojpot62n.apps.googleusercontent.com">
         <script src="https://apis.google.com/js/platform.js" async defer></script>  
 </head>
-<body>
+<body style="text-align:center;">
   <div class="welcome"></div>
-  <div style="padding-top:200px;padding-left:300px;padding-right:300px;" class="g-signin2" data-onsuccess="onSignIn"></div>
+  <div class="g-signin2" data-onsuccess="onSignIn"></div>
 <script>
         function onSignIn(googleUser) {
           var profile = googleUser.getBasicProfile();
           var profileImg = profile.getImageUrl();
           var profileName = profile.getName();
-          document.querySelector('.welcome').innerHTML="<h1 style='font-size:60px;'> Welcome, <img width='60px' height='60px' src='"+profileImg+"'>"+profileName+"!";
+          document.querySelector('.welcome').innerHTML="<h1 style='font-size:60px;'> Welcome, <img width='60px' height='60px' src='"+profileImg+"'>"+profileName+"!<h1><button href="#" onclick="signOut();">Sign out</button>";
           console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
 </script>
