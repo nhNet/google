@@ -9,8 +9,9 @@
 <script>
         function onSignIn(googleUser) {
           var profile = googleUser.getBasicProfile();
-          document.body.innerHTML="<h1 style='font-size:60px;'> Welcome, <img width='60px' height='60px' src='"+profile.getImageUrl()"'>"+profile.getName()+"!";
-          console.log('Image URL: ' + );
+          var profileImg = profile.getImageUrl();
+          var profileName = profile.getName();
+          document.body.innerHTML="<h1 style='font-size:60px;'> Welcome, <img width='60px' height='60px' src='"+profileImg+"'>"+profileName+"!";
           console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
 </script>
@@ -19,7 +20,7 @@
   function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
     auth2.signOut().then(function () {
-      console.log('User signed out.');
+      document.body.innerHTML="<h1>You signed out!</h1><p>Sign In again to continue using NH Net Browser!</p><div class='g-signin2' data-onsuccess='onSignIn'></div>";
     });
   }
 </script>
