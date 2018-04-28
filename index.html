@@ -14,7 +14,7 @@
         function onSignIn(googleUser) {
           var profile = googleUser.getBasicProfile();
           var profileImg = profile.getImageUrl();
-          var profileName = profile.getName();
+          var profileName = profile.getEmail();
           document.querySelector('.welcome').innerHTML="<h1 style='font-size:60px;'> Welcome, <img width='60px' height='60px' src='"+profileImg+"'>"+profileName+"!<h1><button onclick='signOut();'>Sign out</button>";
           console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
         }
