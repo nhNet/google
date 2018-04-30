@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <meta name="google-signin-scope" content="profile email">
+        <meta name="google-signin-client_id" content="398993796104-lq9k21a411mnehe5p94brocp3rs72dr5.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>
+        <script src="js/Ad.js"></script>
+        <script src="js/proxyFunctions.js"></script>
+        <script src="js/cookies+google.js"></script>
+        <link rel="shortcut icon" type="image/png" href="https://image.flaticon.com/icons/png/512/12/12195.png" />
+		<script>
+			function onSignIn(googleUser) {
+			  var profile = googleUser.getBasicProfile();
+			  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+			  console.log('Name: ' + profile.getName());
+			  console.log('Image URL: ' + profile.getImageUrl());
+			  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+			}
+			  function signOut() {
+				var auth2 = gapi.auth2.getAuthInstance();
+				auth2.signOut().then(function () {
+				  console.log('User signed out.');
+				});
+			  }
+		 </script>
+	</head>
+	<body style="text-align:center;">
+		<div class="g-signin2" data-onsuccess="onSignIn" data-onfailure="onFail"></div>
+		<button onclick="signOut();">SignOut</button>
