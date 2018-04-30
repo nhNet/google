@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta name="google-signin-client_id" content="398993796104-lq9k21a411mnehe5p94brocp3rs72dr5.apps.googleusercontent.com">
+        <script src="https://apis.google.com/js/platform.js" async defer></script>  
+</head>
+<body style="text-align:center;">
+  <div class="welcome"></div>
+  <button onclick='signOut();'>Sign out</button>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      document.querySelector('.welcome').innerHTML="<h1>You signed out!</h1><p>Sign In again to continue using NH Net Browser!</p><div class='g-signin2' data-onsuccess='onSignIn'></div>";
+    });
+  }
+</body>
+</html>
